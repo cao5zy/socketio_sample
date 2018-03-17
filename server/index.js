@@ -2,7 +2,7 @@
     module.exports = factory(require('http'), require('socket.io'), require('fs'));
 }(function(http, socket, fs) {
     function handler(req, res) {
-        fs.readFile(__dirname + '/index.html',
+        fs.readFile(__dirname + '/client.html',
             function(err, data) {
                 if (err) {
                     res.writeHead(500);
@@ -17,6 +17,7 @@
     (function(app) {
         (function(socketio) {
             app.listen(8081);
+	    console.log('start to listen 8081');
 
             socketio.on("connection", function(skt) {
                 skt.emit("news", {
