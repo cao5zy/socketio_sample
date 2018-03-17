@@ -2,7 +2,17 @@
     module.exports = factory(require('http'), require('socket.io'), require('fs'));
 }(function(http, socket, fs) {
     function handler(req, res) {
-        fs.readFile(__dirname + '/client.html',
+	function geturl(){
+	    return req.url == "/" ? "/client.html"
+		: req.url
+	}
+
+	function log(url){
+	    console.log('url:', url);
+	    return url;
+	}
+	
+        fs.readFile(__dirname + log(geturl()),
             function(err, data) {
                 if (err) {
                     res.writeHead(500);
