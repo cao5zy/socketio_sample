@@ -36,9 +36,12 @@
 
                 skt.on("__message", function(data) {
 		    console.log('got message:', data);
-                    skt.emit("message__", {
-                        message: data.message
-                    });
+		    setTimeout(()=>{
+			skt.emit("message__", {
+                            message: data.message + " after 5 seconds"
+			});
+		    }, 5000);
+                    
                 });
             });
         }(socket(app)));

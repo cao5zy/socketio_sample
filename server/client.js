@@ -4,6 +4,7 @@
     });
 
     socket.on("message__", (data)=>{
+	console.log('message comes:', data);
 	$("#msg").append("<p>" + data.message + "</p>");
     });
 
