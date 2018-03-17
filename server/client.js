@@ -1,10 +1,10 @@
 (function(socket){
     socket.on("news", function (data){
-	$("#msg").text(data.message);
+	$("#msg").append("<p>" + data.message + "</p>");
     });
 
     socket.on("message__", (data)=>{
-	$("#msg").text(data.message);
+	$("#msg").append("<p>" + data.message + "</p>");
     });
 
     $(document).ready(()=>{
