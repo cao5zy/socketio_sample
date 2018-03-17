@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="/node_modules/socket.io/lib/socket.js"></script>
-    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./client.js"></script>
   </head>
   <body>
     <p>Hello from server</p>
+    <div id="msg" style="width:400px; height:200px"></div>
+    <textarea id="message" style="width:400px; height:20px"></textarea>
+    <button id="send">send</button>
   </body>
 </html>

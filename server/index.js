@@ -35,8 +35,9 @@
                 });
 
                 skt.on("__message", function(data) {
-                    skt.emit("messsage__", {
-                        message: data
+		    console.log('got message:', data);
+                    skt.emit("message__", {
+                        message: data.message
                     });
                 });
             });
